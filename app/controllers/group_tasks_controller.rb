@@ -6,7 +6,8 @@ class GroupTasksController < ApplicationController
   end
 
   def show
-
+    binding.pry
+    @group_task = GroupTask.find(params[:id])
   end
 
   def new
@@ -37,7 +38,7 @@ class GroupTasksController < ApplicationController
 
   private
     def group_task_params
-
+      params.require(:group_task).permit(:name, :due_date, :task => [:name, :user_id])
     end
 
 end
