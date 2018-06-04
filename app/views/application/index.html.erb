@@ -1,1 +1,12 @@
 <h1>Welcome, <%=current_user.email%></h1>
+
+<% @my_tasks.each do |t| %>
+<ul>
+  <li><%= t.name %></li>
+  <% if  t.status == true %>
+    <p>Status: Complete<p>
+  <% else %>
+    <p>Status: In Progress</p>
+  <% end %>
+</ul>
+<%end%>
