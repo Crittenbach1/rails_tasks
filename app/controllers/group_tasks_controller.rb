@@ -10,7 +10,8 @@ class GroupTasksController < ApplicationController
   end
 
   def new
-
+    @group_task = GroupTask.new 
+    @task = Task.new
   end
 
   def create
