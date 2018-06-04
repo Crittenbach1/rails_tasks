@@ -8,5 +8,6 @@
   <% else %>
     <p>Status: In Progress</p>
   <% end %>
+  <%= link_to "Edit Task", edit_tasks_path(t), method: :get %>
 </ul>
 <%end%>

@@ -8,7 +8,6 @@ class ApplicationController < ActionController::Base
           @my_tasks << t
        end
     end
-    
   end
 
 end
