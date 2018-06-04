@@ -2,7 +2,7 @@ class GroupTasksController < ApplicationController
   before_action :authenticate_user!
 
   def index
-
+    @group_tasks = GroupTask.all 
   end
 
   def show
