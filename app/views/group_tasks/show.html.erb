@@ -1,1 +1,9 @@
 <h1><%= @group_task.name %></h1>
+
+<h3>Due Date: <%= @group_task.due_date %></h3>
+
+<% if  @group_task.status == true %>
+  <h3>Status: Complete!</h3>
+<% else %>
+  <h3>Status: In Progress</h3>
+<% end %>

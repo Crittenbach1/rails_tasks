@@ -6,7 +6,6 @@ class GroupTasksController < ApplicationController
   end
 
   def show
-    binding.pry
     @group_task = GroupTask.find(params[:id])
   end
 
