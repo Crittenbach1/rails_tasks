@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2017_11_02_175026) do
+ActiveRecord::Schema.define(version: 2018_06_04_171716) do
+
+  create_table "group_tasks", force: :cascade do |t|
+    t.string "name"
+    t.boolean "status", default: false
+    t.string "due_date"
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.string "name"
+    t.boolean "status", default: false
+    t.integer "user_id"
+    t.integer "group_task_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
