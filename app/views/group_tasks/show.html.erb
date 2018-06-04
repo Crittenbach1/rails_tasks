@@ -7,3 +7,17 @@
 <% else %>
   <h3>Status: In Progress</h3>
 <% end %>
+
+<ul>
+  <% @group_task.tasks.each do |t| %>
+  <li><%= t.name %></li>
+
+   <% if  t.status == true %>
+     <p>Status: Complete<p>
+   <% else %>
+     <p>Status: In Progress</p>
+   <% end %>
+
+   <p>User: <%= User.find(t.user_id).email %> </p>
+  <%end%>
+</ul>
