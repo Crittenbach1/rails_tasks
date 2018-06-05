@@ -2,10 +2,11 @@ class GroupTasksController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @group_tasks = GroupTask.all 
+    @group_tasks = GroupTask.all
   end
 
   def show
+    @task = Task.new
     @group_task = GroupTask.find(params[:id])
   end
 
