@@ -1,6 +1,7 @@
 <h1>Welcome, <%=current_user.email%></h1>
 
 <% @my_tasks.each do |t| %>
+<%= button_to "Edit", edit_task_path(t.id), method: :get %>
 <ul>
   <li><%= t.name %></li>
   <% if  t.status == true %>
@@ -8,6 +9,6 @@
   <% else %>
     <p>Status: In Progress</p>
   <% end %>
-  <%= link_to "Edit Task", edit_tasks_path(t), method: :get %>
 </ul>
+
 <%end%>
