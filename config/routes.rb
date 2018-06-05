@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   root to: "tasks#index"
   resources :group_tasks, :users, :tasks
 
-
+  resources :group_tasks, only: [:show] do
+    resources :tasks, only: [:new, :create]
+  end
 
 end
