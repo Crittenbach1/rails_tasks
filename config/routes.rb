@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   resources :group_tasks
 
-  resource :tasks, only: [:index, :edit, :update]
+  resources :tasks
+
+
 
 end
