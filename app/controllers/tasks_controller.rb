@@ -14,9 +14,19 @@ class TasksController < ApplicationController
     end
 
     def new
+      @task = Task.new
     end
 
     def create
+      @group_task = GroupTask.find(params[:id])
+      @task = Task.new(task_params)
+      @task.user_id = current_user.id
+      @task.group_task_id = params[:id]
+      if @group_task.save
+        redirect_to group_task_path(@group_task)
+      else
+        render :new
+      end
     end
 
     def edit
@@ -39,6 +49,13 @@ class TasksController < ApplicationController
       @task.delete
       redirect_to root_path
     end
+
+
+      private
+        def task_params
+          params.require(:task).permit(:name)
+        end
+
 
 
 end
