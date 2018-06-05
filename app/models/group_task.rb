@@ -11,4 +11,8 @@ class GroupTask < ApplicationRecord
       end
   end
 
+  def self.group_task_progress(group_task)
+    binding.pry
+  end
+
 end
